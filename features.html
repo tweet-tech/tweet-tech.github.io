@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>功能介绍 — 推文（Tweet轻记）</title>
+    <meta
+      name="description"
+      class="zh"
+      content="推文（Tweet轻记）的 9 个核心功能：文字+图片+位置贴文、无算法时间线、实时通知、相机集成、私聊群聊、社区、话题、@提及引用、多种登录方式。"
+    />
+    <meta
+      name="description"
+      class="en"
+      content="9 core features of 推文（Tweet轻记）: text/image/location posts, chronological timeline, real-time notifications, camera integration, DMs and group chat, communities, topics, mentions & quotes, multiple sign-in options."
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/png" href="assets/images/icon.png" />
+    <link rel="apple-touch-icon" href="assets/images/icon.png" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/theme.js"></script>
+  </head>
+  <body data-title-zh="功能介绍 — 推文（Tweet轻记）" data-title-en="Features — 推文（Tweet轻记）">
+    <!-- 导航栏 -->
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">
+          <img src="assets/images/icon.png" alt="推文（Tweet轻记）" />
+          <span>推文（Tweet轻记）</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">
+            <span class="zh">首页</span>
+            <span class="en">Home</span>
+          </a>
+          <a href="features.html" class="nav-link">
+            <span class="zh">功能</span>
+            <span class="en">Features</span>
+          </a>
+          <a href="privacy.html" class="nav-link">
+            <span class="zh">隐私政策</span>
+            <span class="en">Privacy</span>
+          </a>
+          <a href="terms.html" class="nav-link">
+            <span class="zh">服务条款</span>
+            <span class="en">Terms</span>
+          </a>
+          <a href="contact.html" class="nav-link">
+            <span class="zh">联系我们</span>
+            <span class="en">Contact</span>
+          </a>
+        </div>
+        <div class="nav-spacer"></div>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn" data-lang-btn="zh" type="button">
+            中
+          </button>
+          <button class="lang-btn" data-lang-btn="en" type="button">
+            EN
+          </button>
+        </div>
+        <button class="theme-toggle" data-theme-toggle type="button" aria-label="切换主题">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <button
+          class="nav-toggle"
+          data-nav-toggle
+          type="button"
+          aria-label="Menu"
+        >
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 页头 -->
+    <header class="legal">
+      <div class="container">
+        <div class="legal-header">
+          <div class="legal-meta">
+            <span class="zh">9 个核心功能</span>
+            <span class="en">9 core features</span>
+          </div>
+          <h1>
+            <span class="zh">功能介绍</span>
+            <span class="en">Features</span>
+          </h1>
+          <p>
+            <span class="zh">从贴文到聊天，每一个细节都为对话而生。</span>
+            <span class="en">From posting to chatting, every detail serves the conversation.</span>
+          </p>
+        </div>
+
+        <!-- 目录 -->
+        <div class="legal-toc">
+          <h3>
+            <span class="zh">目录</span>
+            <span class="en">Contents</span>
+          </h3>
+          <ol>
+            <li><a href="#posts"><span class="zh">文字 + 图片 + 位置贴文</span><span class="en">Text, images & location</span></a></li>
+            <li><a href="#timeline"><span class="zh">时间线动态（无算法）</span><span class="en">Chronological timeline</span></a></li>
+            <li><a href="#notifications"><span class="zh">实时通知</span><span class="en">Real-time notifications</span></a></li>
+            <li><a href="#camera"><span class="zh">相机集成</span><span class="en">Camera integration</span></a></li>
+            <li><a href="#chat"><span class="zh">私聊与群聊</span><span class="en">DMs & group chat</span></a></li>
+            <li><a href="#community"><span class="zh">社区</span><span class="en">Communities</span></a></li>
+            <li><a href="#topics"><span class="zh">话题</span><span class="en">Topics</span></a></li>
+            <li><a href="#mentions"><span class="zh">@ 提及与引用</span><span class="en">Mentions & quotes</span></a></li>
+            <li><a href="#login"><span class="zh">多种登录方式</span><span class="en">Sign-in options</span></a></li>
+          </ol>
+        </div>
+
+        <!-- 功能 1：贴文 -->
+        <div class="feature-detail" id="posts">
+          <div class="feature-detail-content">
+            <span class="feature-detail-num"
+              ><span class="zh">01</span
+              ><span class="en">01</span></span
+            >
+            <h2>
+              <span class="zh">文字 + 图片 + 位置贴文</span>
+              <span class="en">Text, images & location posts</span>
+            </h2>
+            <p class="feature-detail-desc">
+              <span class="zh"
+                >280 字以内表达一个完整想法。可以配图增强表达，也可以加上位置标签让贴文更具上下文。</span
+              >
+              <span class="en"
+                >Up to 280 characters for a complete thought. Add images to enrich your message, and an optional location tag for context.</span
+              >
+            </p>
+            <ul class="feature-bullets">
+              <li>
+                <span class="zh">280 字字数统计，所见即所得</span>
+                <span class="en">Live 280-character counter</span>
+              </li>
+              <li>
+                <span class="zh">最多 4 张图片，支持实时编辑滤镜</span>
+                <span class="en">Up to 4 images with built-in filters</span>
+              </li>
+              <li>
+                <span class="zh">位置标签可选，不强制 GPS 写入</span>
+                <span class="en">Optional location, no forced GPS tagging</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-detail-visual">
+            <div class="phone">
+              <div class="phone-screen">
+                <img
+                  src="https://cdn.tweetcaht.com/uploads/20260924/bcada65f505b41dfae9eee380a36dd47.png"
+                  alt="Post composer"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 功能 2：时间线 -->
+        <div class="feature-detail" id="timeline">
+          <div class="feature-detail-content">
+            <span class="feature-detail-num"
+              ><span class="zh">02</span
+              ><span class="en">02</span></span
+            >
+            <h2>
+              <span class="zh">时间线动态（无算法）</span>
+              <span class="en">Chronological timeline</span>
+            </h2>
+            <p class="feature-detail-desc">
+              <span class="zh"
+                >按时间顺序排列，只展示你选择关注的人。没有"推荐"，没有"热门"，没有信息流操纵。</span
+              >
+              <span class="en"
+                >In chronological order, only from the people you follow. No "For You", no "Trending", no algorithmic manipulation.</span
+              >
+            </p>
+            <ul class="feature-bullets">
+              <li>
+                <span class="zh">严格按时间倒序，不掺杂机器学习推荐</span>
+                <span class="en">Strict reverse-chronological, no ML ranking</span>
+              </li>
+              <li>
+                <span class="zh">支持"仅关注"和"包含转发"两种视图</span>
+                <span class="en">Toggle between "Following" and "With Reposts"</span>
+              </li>
+              <li>
+                <span class="zh">可按主题或社区过滤自定义时间线</span>
+                <span class="en">Filter timeline by topic or community</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-detail-visual">
+            <div class="phone">
+              <div class="phone-screen">
+                <img
+                  src="https://cdn.tweetcaht.com/uploads/20260924/8f133184638c4f4889f32fbc40889cc2.png"
+                  alt="Timeline"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 功能 3：通知 -->
+        <div class="feature-detail" id="notifications">
+          <div class="feature-detail-content">
+            <span class="feature-detail-num"
+              ><span class="zh">03</span
+              ><span class="en">03</span></span
+            >
+            <h2>
+              <span class="zh">实时通知</span>
+              <span class="en">Real-time notifications</span>
+            </h2>
+            <p class="feature-detail-desc">
+              <span class="zh"
+                >点赞、回复、@、关注的实时提醒，不会错过任何重要时刻。</span
+              >
+              <span class="en"
+                >Instant alerts for likes, replies, mentions, and follows — never miss a moment that matters.</span
+              >
+            </p>
+            <ul class="feature-bullets">
+              <li>
+                <span class="zh">推送通知分级：所有人 / 我关注的人 / 关闭</span>
+                <span class="en">Granular push: everyone, people I follow, off</span>
+              </li>
+              <li>
+                <span class="zh">通知中心按类型聚合：@、点赞、关注、回复</span>
+                <span class="en">Inbox grouped by type: mentions, likes, follows, replies</span>
+              </li>
+              <li>
+                <span class="zh">静音关键字、话题和用户</span>
+                <span class="en">Mute keywords, topics, and users</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-detail-visual">
+            <div class="phone">
+              <div class="phone-screen">
+                <img
+                  src="https://cdn.tweetcaht.com/uploads/20260924/be618136df044bc898e333aec5d9fac6.png"
+                  alt="Notifications"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 功能 4：相机 -->
+        <div class="feature-detail" id="camera">
+          <div class="feature-detail-content">
+            <span class="feature-detail-num"
+              ><span class="zh">04</span
+              ><span class="en">04</span></span
+            >
+            <h2>
+              <span class="zh">相机集成</span>
+              <span class="en">Camera integration</span>
+            </h2>
+            <p class="feature-detail-desc">
+              <span class="zh"
+                >原生相机体验，支持前后摄、闪光、超广角、缩放，拍下当下。</span
+              >
+              <span class="en"
+                >Native camera: front, back, flash, ultrawide, zoom — capture the moment as it happens.</span
+              >
+            </p>
+            <ul class="feature-bullets">
+              <li>
+                <span class="zh">前后摄快速切换，单手即可完成</span>
+                <span class="en">Quick front/back switch, one-handed</span>
+              </li>
+              <li>
+                <span class="zh">支持超广角 0.5x 至 3x 缩放</span>
+                <span class="en">Ultrawide 0.5x to 3x zoom</span>
+              </li>
+              <li>
+                <span class="zh">闪光灯与实时 HDR 自动模式</span>
+                <span class="en">Flash and live HDR auto mode</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-detail-visual">
+            <div class="phone">
+              <div class="phone-screen">
+                <img
+                  src="https://cdn.tweetcaht.com/uploads/20260924/3eac7b7fe87043d3a05eb6d776877580.png"
+                  alt="Camera"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 功能 5：私聊与群聊 -->
+        <div class="feature-detail" id="chat">
+          <div class="feature-detail-content">
+            <span class="feature-detail-num"
+              ><span class="zh">05</span
+              ><span class="en">05</span></span
+            >
+            <h2>
+              <span class="zh">私聊与群聊</span>
+              <span class="en">DMs & group chat</span>
+            </h2>
+            <p class="feature-detail-desc">
+              <span class="zh"
+                >从 1v1 到最多 50 人的群组消息，支持表情回应和未读提示。</span
+              >
+              <span class="en"
+                >One-to-one and group chats up to 50 people, with reactions and read receipts.</span
+              >
+            </p>
+            <ul class="feature-bullets">
+              <li>
+                <span class="zh">群组消息最多支持 50 人</span>
+                <span class="en">Group chats up to 50 members</span>
+              </li>
+              <li>
+                <span class="zh">表情回应：👍 ❤️ 🎉 等一键回复</span>
+                <span class="en">Reactions: 👍 ❤️ 🎉 one-tap replies</span>
+              </li>
+              <li>
+                <span class="zh">端到端加密保护敏感对话</span>
+                <span class="en">End-to-end encryption for sensitive chats</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-detail-visual">
+            <div class="phone">
+              <div class="phone-screen">
+                <img
+                  src="https://cdn.tweetcaht.com/uploads/20260924/4080ac528b954b1ca9e2bf0878f8a91f.png"
+                  alt="Chat"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 功能 6：社区 -->
+        <div class="feature-detail" id="community">
+          <div class="feature-detail-content">
+            <span class="feature-detail-num"
+              ><span class="zh">06</span
+              ><span class="en">06</span></span
+            >
+            <h2>
+              <span class="zh">社区</span>
+              <span class="en">Communities</span>
+            </h2>
+            <p class="feature-detail-desc">
+              <span class="zh"
+                >加入兴趣社区，与同好互动。每个社区有独立的关注流、规则和版主。</span
+              >
+              <span class="en"
+                >Join interest-based communities, find your people. Each community has its own feed, rules, and moderators.</span
+              >
+            </p>
+            <ul class="feature-bullets">
+              <li>
+                <span class="zh">加入最多 100 个社区，切换视图一目了然</span>
+                <span class="en">Join up to 100 communities, easy view switching</span>
+              </li>
+              <li>
+                <span class="zh">社区版主可置顶、删除贴文和封禁用户</span>
+                <span class="en">Mods can pin, remove posts, and ban users</span>
+              </li>
+              <li>
+                <span class="zh">社区规则明确公开，违规有据可依</span>
+                <span class="en">Clear public rules, enforcement is transparent</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-detail-visual">
+            <div class="phone">
+              <div class="phone-screen">
+                <img
+                  src="https://cdn.tweetcaht.com/uploads/20260924/498014eac74d4c8399801c77a3fcd927.png"
+                  alt="Communities"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 功能 7：话题 -->
+        <div class="feature-detail" id="topics">
+          <div class="feature-detail-content">
+            <span class="feature-detail-num"
+              ><span class="zh">07</span
+              ><span class="en">07</span></span
+            >
+            <h2>
+              <span class="zh">话题</span>
+              <span class="en">Topics</span>
+            </h2>
+            <p class="feature-detail-desc">
+              <span class="zh"
+                >围绕 #话题 聚合内容。点击话题标签即可查看所有相关贴文。</span
+              >
+              <span class="en"
+                >Aggregate content around #topics. Tap a hashtag to see all related posts in one feed.</span
+              >
+            </p>
+            <ul class="feature-bullets">
+              <li>
+                <span class="zh">关注话题以纳入时间线</span>
+                <span class="en">Follow topics to add them to your timeline</span>
+              </li>
+              <li>
+                <span class="zh">"今日热门话题"按真实互动量排序</span>
+                <span class="en">"Trending" sorted by real engagement</span>
+              </li>
+              <li>
+                <span class="zh">话题详情页：相关社区、推荐关注</span>
+                <span class="en">Topic detail: related communities, suggested follows</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-detail-visual">
+            <div class="phone">
+              <div class="phone-screen">
+                <img
+                  src="https://cdn.tweetcaht.com/uploads/20260924/498014eac74d4c8399801c77a3fcd927.png"
+                  alt="Topics"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 功能 8：@ 提及与引用 -->
+        <div class="feature-detail" id="mentions">
+          <div class="feature-detail-content">
+            <span class="feature-detail-num"
+              ><span class="zh">08</span
+              ><span class="en">08</span></span
+            >
+            <h2>
+              <span class="zh">@ 提及与引用</span>
+              <span class="en">Mentions & quotes</span>
+            </h2>
+            <p class="feature-detail-desc">
+              <span class="zh"
+                >@某人 触发提醒，引用转发让对话公开串联。让一段对话有来有回。</span
+              >
+              <span class="en"
+                >@mention triggers a notification, quote posts weave public conversations together. Threads that go back and forth.</span
+              >
+            </p>
+            <ul class="feature-bullets">
+              <li>
+                <span class="zh">@提及触发推送通知</span>
+                <span class="en">@mention triggers a push notification</span>
+              </li>
+              <li>
+                <span class="zh">引用转发可附加自己的评论</span>
+                <span class="en">Quote with your own commentary</span>
+              </li>
+              <li>
+                <span class="zh">支持嵌套回复树，对话层层展开</span>
+                <span class="en">Nested reply threads, layered conversations</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-detail-visual">
+            <div class="phone">
+              <div class="phone-screen">
+                <img
+                  src="https://cdn.tweetcaht.com/uploads/20260924/be618136df044bc898e333aec5d9fac6.png"
+                  alt="Mentions"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 功能 9：登录方式 -->
+        <div class="feature-detail" id="login">
+          <div class="feature-detail-content">
+            <span class="feature-detail-num"
+              ><span class="zh">09</span
+              ><span class="en">09</span></span
+            >
+            <h2>
+              <span class="zh">多种登录方式</span>
+              <span class="en">Multiple sign-in options</span>
+            </h2>
+            <p class="feature-detail-desc">
+              <span class="zh"
+                >按你方便的方式开始：Apple ID、Google 账号、手机号，或自选用户名。</span
+              >
+              <span class="en"
+                >Start the way that's convenient: Apple ID, Google, phone number, or pick a username.</span
+              >
+            </p>
+            <ul class="feature-bullets">
+              <li>
+                <span class="zh">Sign in with Apple —— 默认隐藏邮箱</span>
+                <span class="en">Sign in with Apple — hide your email by default</span>
+              </li>
+              <li>
+                <span class="zh">Google 一键登录</span>
+                <span class="en">One-tap Google sign-in</span>
+              </li>
+              <li>
+                <span class="zh">手机号验证码 + 自定义用户名兜底</span>
+                <span class="en">Phone OTP + custom username fallback</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-detail-visual">
+            <div class="phone">
+              <div class="phone-screen">
+                <img
+                  src="https://cdn.tweetcaht.com/uploads/20260924/0cb8a2abcf9c4be28ec8d0fcdca7a528.png"
+                  alt="Sign in"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo">
+              <img src="assets/images/icon.png" alt="推文（Tweet轻记）" />
+              <span>推文（Tweet轻记）</span>
+            </a>
+            <p>
+              <span class="zh">对话优先的移动社交 App。</span>
+              <span class="en">A conversation-first mobile social app.</span>
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <span class="zh">产品</span><span class="en">Product</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="index.html"
+                  ><span class="zh">首页</span
+                  ><span class="en">Home</span></a
+                >
+              </li>
+              <li>
+                <a href="features.html"
+                  ><span class="zh">功能</span
+                  ><span class="en">Features</span></a
+                >
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><span class="zh">联系我们</span
+                  ><span class="en">Contact</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <span class="zh">法律</span><span class="en">Legal</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="privacy.html"
+                  ><span class="zh">隐私政策</span
+                  ><span class="en">Privacy Policy</span></a
+                >
+              </li>
+              <li>
+                <a href="terms.html"
+                  ><span class="zh">服务条款</span
+                  ><span class="en">Terms of Service</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>© 2026 推文（Tweet轻记）. All rights reserved.</div>
+          <div>
+            <span class="zh">联系方式</span
+            ><span class="en">Contact</span
+            >：
+            <a href="contact.html" style="color: var(--text-secondary)"
+              ><span class="zh">查看</span
+              ><span class="en">See</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

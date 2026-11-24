@@ -1,63 +1,708 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tweet Tech</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-        }
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 60px 80px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        p {
-            font-size: 1.2em;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 14px 36px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1em;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Tweet Tech</h1>
-        <p>分享技术，传播知识。<br>这里是我们的技术小站。</p>
-        <a href="https://github.com/tweet-tech" class="btn" target="_blank">访问 GitHub</a>
-    </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>推文（Tweet轻记） — 对话优先的移动社交 App</title>
+    <meta
+      name="description"
+      class="zh"
+      content="推文（Tweet轻记）是一款对话优先的移动社交 App：没有算法，只有你选择关注的人。文字优先，图片友好，隐私优先。"
+    />
+    <meta
+      name="description"
+      class="en"
+      content="推文（Tweet轻记） is a conversation-first mobile social app. No algorithm — only the people you choose to follow. Text-first, image-friendly, privacy-first."
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta name="google-site-verification" content="anHr6unx4EPNinnOKG_UTaJ_ejLAhKs9FpE73dEtvSk" />
+    <link rel="icon" type="image/png" href="assets/images/icon.png" />
+    <link rel="apple-touch-icon" href="assets/images/icon.png" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/theme.js"></script>
+  </head>
+  <body data-title-zh="推文（Tweet轻记） — 对话优先的移动社交 App" data-title-en="推文（Tweet轻记） — Conversation-first mobile social app">
+    <!-- 导航栏 -->
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">
+          <img src="assets/images/icon.png" alt="推文（Tweet轻记）" />
+          <span>推文（Tweet轻记）</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">
+            <span class="zh">首页</span>
+            <span class="en">Home</span>
+          </a>
+          <a href="features.html" class="nav-link">
+            <span class="zh">功能</span>
+            <span class="en">Features</span>
+          </a>
+          <a href="privacy.html" class="nav-link">
+            <span class="zh">隐私政策</span>
+            <span class="en">Privacy</span>
+          </a>
+          <a href="terms.html" class="nav-link">
+            <span class="zh">服务条款</span>
+            <span class="en">Terms</span>
+          </a>
+          <a href="contact.html" class="nav-link">
+            <span class="zh">联系我们</span>
+            <span class="en">Contact</span>
+          </a>
+        </div>
+        <div class="nav-spacer"></div>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn" data-lang-btn="zh" type="button">
+            中
+          </button>
+          <button class="lang-btn" data-lang-btn="en" type="button">
+            EN
+          </button>
+        </div>
+        <button class="theme-toggle" data-theme-toggle type="button" aria-label="切换主题">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <button
+          class="nav-toggle"
+          data-nav-toggle
+          type="button"
+          aria-label="Menu"
+        >
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>
+            <span class="zh"
+              >把你最在意的想法<br /><span class="gradient"
+                >第一时间说出来</span
+              ></span
+            >
+            <span class="en"
+              >Share what matters, <span class="gradient">right now</span>.</span
+            >
+          </h1>
+          <p class="hero-subtitle">
+            <span class="zh"
+              >推文（Tweet轻记）是一款对话优先的移动社交 App —— 没有算法决定你看什么，只有你选择关注的人。文字优先，图片友好，隐私优先。</span
+            >
+            <span class="en"
+              >推文（Tweet轻记） is a conversation-first mobile social app. No algorithm decides what you see — only the people you choose to follow. Text-first, image-friendly, privacy-first.</span
+            >
+          </p>
+          <div class="hero-cta">
+            <a href="features.html" class="btn btn-ghost">
+              <span class="zh">了解功能</span>
+              <span class="en">Explore features</span>
+            </a>
+          </div>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="zh">iOS · Android</span>
+              <span class="en">iOS · Android</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="zh">双端原生体验</span>
+              <span class="en">Native on both</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="zh">免费使用</span>
+              <span class="en">Free to use</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-card floating-card-1">
+            <div class="floating-icon">@</div>
+            <div>
+              <div style="font-size: 11px; color: var(--text-tertiary)">
+                <span class="zh">提及</span><span class="en">Mention</span>
+              </div>
+              <div>
+                <span class="zh">Alex 回复了你</span
+                ><span class="en">Alex replied</span>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card floating-card-2">
+            <div class="floating-icon" style="background: linear-gradient(135deg,#e5e5e5,#8a8a8a)">
+              ♥
+            </div>
+            <div>
+              <div style="font-size: 11px; color: var(--text-tertiary)">
+                <span class="zh">点赞</span><span class="en">Like</span>
+              </div>
+              <div>
+                <span class="zh">+12 个赞</span
+                ><span class="en">+12 likes</span>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card floating-card-3">
+            <div class="floating-icon" style="background: linear-gradient(135deg,#d4d4d4,#737373)">
+              ✓
+            </div>
+            <div>
+              <div style="font-size: 11px; color: var(--text-tertiary)">
+                <span class="zh">关注</span><span class="en">Follow</span>
+              </div>
+              <div>
+                <span class="zh">Sam 关注了你</span
+                ><span class="en">Sam followed you</span>
+              </div>
+            </div>
+          </div>
+          <div class="phone">
+            <div class="phone-screen">
+              <img
+                src="https://cdn.tweetcaht.com/uploads/20260924/8f133184638c4f4889f32fbc40889cc2.png"
+                alt="推文（Tweet轻记） App Screenshot"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 价值三连点 -->
+    <section class="tri-features">
+      <div class="container">
+        <div class="tri-grid">
+          <div class="tri-card fade-in">
+            <div class="tri-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h3 class="tri-title">
+              <span class="zh">无算法时间线</span>
+              <span class="en">Chronological timeline</span>
+            </h3>
+            <p class="tri-desc">
+              <span class="zh">按时间顺序，只看你选择关注的人。没有"推荐"，没有信息流操纵。</span>
+              <span class="en">See posts in chronological order, only from the people you choose. No recommendations, no manipulation.</span>
+            </p>
+          </div>
+          <div class="tri-card fade-in">
+            <div class="tri-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="4" y1="9" x2="20" y2="9" />
+                <line x1="4" y1="15" x2="14" y2="15" />
+              </svg>
+            </div>
+            <h3 class="tri-title">
+              <span class="zh">文字优先</span>
+              <span class="en">Text-first</span>
+            </h3>
+            <p class="tri-desc">
+              <span class="zh">280 字以内表达完整想法，配图锦上添花，位置标签可选。让对话回到内容本身。</span>
+              <span class="en">Up to 280 characters, with optional images and location tags. Conversations are about the words.</span>
+            </p>
+          </div>
+          <div class="tri-card fade-in">
+            <div class="tri-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </div>
+            <h3 class="tri-title">
+              <span class="zh">隐私优先</span>
+              <span class="en">Privacy first</span>
+            </h3>
+            <p class="tri-desc">
+              <span class="zh">联系人数据保留在本机，不上传。你的关注、你的对话、你的数据，始终属于你。</span>
+              <span class="en">Your contacts stay on your device. We never upload them. Your follows, your conversations, your data.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 核心功能 6 卡 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">
+            <span class="zh">核心功能</span><span class="en">Core features</span>
+          </div>
+          <h2 class="section-title">
+            <span class="zh">做你需要的，不做你不需要的</span>
+            <span class="en">What you need. Nothing you don't.</span>
+          </h2>
+          <p class="section-subtitle">
+            <span class="zh">从贴文到聊天，从关注到发现 —— 每一个功能都为了让对话更顺畅。</span>
+            <span class="en">From posting to chatting, following to discovering — every feature exists to make conversation better.</span>
+          </p>
+        </div>
+        <div class="features-grid">
+          <a href="features.html#posts" class="feature-card fade-in">
+            <svg
+              class="arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <h3 class="feature-title">
+              <span class="zh">文字 + 图片 + 位置贴文</span>
+              <span class="en">Text, images & location</span>
+            </h3>
+            <p class="feature-desc">
+              <span class="zh">280 字以内表达，配图更生动，可选位置标签。</span>
+              <span class="en">Up to 280 characters, with images and optional location.</span>
+            </p>
+          </a>
+          <a href="features.html#notifications" class="feature-card fade-in">
+            <svg
+              class="arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+              </svg>
+            </div>
+            <h3 class="feature-title">
+              <span class="zh">实时通知</span>
+              <span class="en">Real-time notifications</span>
+            </h3>
+            <p class="feature-desc">
+              <span class="zh">点赞、回复、@、关注，第一时间送达。</span>
+              <span class="en">Likes, replies, mentions, follows — instantly.</span>
+            </p>
+          </a>
+          <a href="features.html#camera" class="feature-card fade-in">
+            <svg
+              class="arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+                />
+                <circle cx="12" cy="13" r="4" />
+              </svg>
+            </div>
+            <h3 class="feature-title">
+              <span class="zh">相机拍摄</span>
+              <span class="en">Camera capture</span>
+            </h3>
+            <p class="feature-desc">
+              <span class="zh">前后摄、闪光、超广角、缩放，原生相机体验。</span>
+              <span class="en">Front/back, flash, ultrawide, zoom — native camera experience.</span>
+            </p>
+          </a>
+          <a href="features.html#chat" class="feature-card fade-in">
+            <svg
+              class="arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z" />
+              </svg>
+            </div>
+            <h3 class="feature-title">
+              <span class="zh">私聊与群聊</span>
+              <span class="en">DMs & group chat</span>
+            </h3>
+            <p class="feature-desc">
+              <span class="zh">1v1 与群组消息，支持表情回应和未读提示。</span>
+              <span class="en">One-to-one and group messages, with reactions and read receipts.</span>
+            </p>
+          </a>
+          <a href="features.html#community" class="feature-card fade-in">
+            <svg
+              class="arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 class="feature-title">
+              <span class="zh">社区与话题</span>
+              <span class="en">Communities & topics</span>
+            </h3>
+            <p class="feature-desc">
+              <span class="zh">加入兴趣社区，参与话题讨论，找到同好。</span>
+              <span class="en">Join communities, follow topics, find your people.</span>
+            </p>
+          </a>
+          <a href="features.html#login" class="feature-card fade-in">
+            <svg
+              class="arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+            <div class="feature-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                <polyline points="10 17 15 12 10 7" />
+                <line x1="15" y1="12" x2="3" y2="12" />
+              </svg>
+            </div>
+            <h3 class="feature-title">
+              <span class="zh">多种登录方式</span>
+              <span class="en">Multiple sign-in options</span>
+            </h3>
+            <p class="feature-desc">
+              <span class="zh">Apple、Google、手机号、用户名，按你方便的方式开始。</span>
+              <span class="en">Apple, Google, phone, username — start the way you want.</span>
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 截图轮播 -->
+    <section class="section screenshots">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">
+            <span class="zh">应用内截图</span><span class="en">In-app screenshots</span>
+          </div>
+          <h2 class="section-title">
+            <span class="zh">移动原生体验</span>
+            <span class="en">Made for mobile</span>
+          </h2>
+          <p class="section-subtitle">
+            <span class="zh">干净、流畅，iOS 与 Android 双端原生。</span>
+            <span class="en">Clean, fluid, native on both iOS and Android.</span>
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="screenshot-track">
+          <div class="screenshot-item">
+            <img
+              src="https://cdn.tweetcaht.com/uploads/20260924/8f133184638c4f4889f32fbc40889cc2.png"
+              alt="推文（Tweet轻记） Home Timeline"
+            />
+          </div>
+          <div class="screenshot-item">
+            <img
+              src="https://cdn.tweetcaht.com/uploads/20260924/bcada65f505b41dfae9eee380a36dd47.png"
+              alt="推文（Tweet轻记） Post Composer"
+            />
+          </div>
+          <div class="screenshot-item">
+            <img
+              src="https://cdn.tweetcaht.com/uploads/20260924/be618136df044bc898e333aec5d9fac6.png"
+              alt="推文（Tweet轻记） Notifications"
+            />
+          </div>
+          <div class="screenshot-item">
+            <img
+              src="https://cdn.tweetcaht.com/uploads/20260924/4080ac528b954b1ca9e2bf0878f8a91f.png"
+              alt="推文（Tweet轻记） Chat"
+            />
+          </div>
+          <div class="screenshot-item">
+            <img
+              src="https://cdn.tweetcaht.com/uploads/20260924/498014eac74d4c8399801c77a3fcd927.png"
+              alt="推文（Tweet轻记） Communities"
+            />
+          </div>
+          <div class="screenshot-item">
+            <img
+              src="https://cdn.tweetcaht.com/uploads/20260924/0cb8a2abcf9c4be28ec8d0fcdca7a528.png"
+              alt="推文（Tweet轻记） Profile"
+            />
+          </div>
+          <div class="screenshot-item">
+            <img
+              src="https://cdn.tweetcaht.com/uploads/20260924/3eac7b7fe87043d3a05eb6d776877580.png"
+              alt="推文（Tweet轻记） Camera"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 为什么选择推文（Tweet轻记） -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">
+            <span class="zh">为什么选择推文（Tweet轻记）</span
+            ><span class="en">Why 推文（Tweet轻记）</span>
+          </div>
+          <h2 class="section-title">
+            <span class="zh">更少噪音，更多对话</span>
+            <span class="en">Less noise. More conversation.</span>
+          </h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card fade-in">
+            <div class="why-num">
+              <span class="zh">01 · 公开</span
+              ><span class="en">01 · Open</span>
+            </div>
+            <h3 class="why-title">
+              <span class="zh">公开对话</span
+              ><span class="en">Public conversations</span>
+            </h3>
+            <p class="why-desc">
+              <span class="zh">你的贴文默认公开，但你的关注、私聊和数据属于你。我们不做"影子档案"，不向广告商出售行为数据。</span>
+              <span class="en">Your posts are public by default — but your follows, DMs, and data belong to you. No shadow profiles, no behavioral ad targeting.</span>
+            </p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-num">
+              <span class="zh">02 · 移动原生</span
+              ><span class="en">02 · Mobile-native</span>
+            </div>
+            <h3 class="why-title">
+              <span class="zh">双端原生</span
+              ><span class="en">Native on both</span>
+            </h3>
+            <p class="why-desc">
+              <span class="zh">不用网页套壳，iOS 与 Android 均为原生打造。支持深色模式与系统级辅助功能，体验干净流畅。</span>
+              <span class="en">Not a web wrapper — natively built for both iOS and Android, with Dark Mode and system-level accessibility support.</span>
+            </p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-num">
+              <span class="zh">03 · 控制权</span
+              ><span class="en">03 · Control</span>
+            </div>
+            <h3 class="why-title">
+              <span class="zh">你掌控你的关注</span
+              ><span class="en">You own your follows</span>
+            </h3>
+            <p class="why-desc">
+              <span class="zh">关注谁，取消关注谁，看到什么，看不到什么 —— 全由你决定。无算法干预，无信息流推荐，无信息茧房。</span>
+              <span class="en">Who you follow, who you unfollow, what you see — entirely your call. No algorithmic manipulation, no filter bubbles.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最终 CTA -->
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo">
+              <img src="assets/images/icon.png" alt="推文（Tweet轻记）" />
+              <span>推文（Tweet轻记）</span>
+            </a>
+            <p>
+              <span class="zh">对话优先的移动社交 App。</span>
+              <span class="en">A conversation-first mobile social app.</span>
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <span class="zh">产品</span><span class="en">Product</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="index.html"
+                  ><span class="zh">首页</span
+                  ><span class="en">Home</span></a
+                >
+              </li>
+              <li>
+                <a href="features.html"
+                  ><span class="zh">功能</span
+                  ><span class="en">Features</span></a
+                >
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><span class="zh">联系我们</span
+                  ><span class="en">Contact</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>
+              <span class="zh">法律</span><span class="en">Legal</span>
+            </h4>
+            <ul>
+              <li>
+                <a href="privacy.html"
+                  ><span class="zh">隐私政策</span
+                  ><span class="en">Privacy Policy</span></a
+                >
+              </li>
+              <li>
+                <a href="terms.html"
+                  ><span class="zh">服务条款</span
+                  ><span class="en">Terms of Service</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>© 2026 推文（Tweet轻记）. All rights reserved.</div>
+          <div>
+            <span class="zh">联系方式</span
+            ><span class="en">Contact</span
+            >：
+            <a href="contact.html" style="color: var(--text-secondary)"
+              ><span class="zh">查看</span
+              ><span class="en">See</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
